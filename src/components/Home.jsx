@@ -12,19 +12,19 @@ const Home = ({ socket }) => {
     navigate('/chat')
   }
   return (
-    <form className='home__container' onSubmit={handleSubmit}>
-      <h2 className='home__header'>Sign in to Open Chat</h2>
-      <label htmlFor='username'>Username</label>
+    <form className='container min-h-screen bg-white flex flex-col items-center justify-center' onSubmit={handleSubmit}>
+      <h2 className='text-3xl mb-3'>Sign in to Open Chat</h2>
+      <label htmlFor='username' className='text-lg mb-2'>Username</label>
       <input
         type='text'
         minLength={6}
         name='username'
         id='username'
-        className='username__input'
+        className='border-2 border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500 mb-3'
         value={userName}
         onChange={(e) => setUserName(e.target.value)}
       />
-      <button className='home__cta'>SIGN IN</button>
+      <button className='bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700'>Sign in</button>
     </form>
   )
 }

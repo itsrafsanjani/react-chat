@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ChatBar from './ChatBar'
 import ChatBody from './ChatBody'
-import ChatFooter from './ChatFooter'
 
 const ChatPage = ({ socket }) => {
   const [messages, setMessages] = useState([])
@@ -22,15 +21,15 @@ const ChatPage = ({ socket }) => {
   }, [messages])
 
   return (
-    <div className='chat'>
+    <div className='container min-h-screen bg-white flex justify-between'>
       <ChatBar socket={socket} />
-      <div className='chat__main'>
+      <div className='w-9/12 flex flex-col justify-between'>
         <ChatBody
           messages={messages}
           typingStatus={typingStatus}
           lastMessageRef={lastMessageRef}
+          socket={socket}
         />
-        <ChatFooter socket={socket} />
       </div>
     </div>
   )

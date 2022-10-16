@@ -8,13 +8,13 @@ const ChatBar = ({ socket }) => {
   }, [socket, users])
 
   return (
-    <div className='chat__sidebar'>
-      <h2>Open Chat</h2>
-      <div>
-        <h4 className='chat__header'>ACTIVE USERS</h4>
-        <div className='chat__users'>
+    <div className='bg-gray-50 w-3/12 shadow-lg'>
+      <h2 className='text-center text-3xl mb-5'>Open Chat</h2>
+      <div className='ml-5'>
+        <h4 className='pl-5'>ACTIVE USERS</h4>
+        <div className='pl-8'>
           {users.map((user) => (
-            <p key={user.socketID}>{user.userName}</p>
+            <h3 className='text-green-500' key={user.socketID}>{user.userName}</h3>
           ))}
         </div>
       </div>
